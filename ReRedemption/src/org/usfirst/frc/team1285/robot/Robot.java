@@ -9,6 +9,8 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import org.usfirst.frc.team1285.robot.subsystems.Drivetrain;
 import org.usfirst.frc.team1285.robot.subsystems.Indexer;
 import org.usfirst.frc.team1285.robot.subsystems.Intake;
+import org.usfirst.frc.team1285.robot.subsystems.Shooter;
+
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
@@ -23,6 +25,7 @@ public class Robot extends IterativeRobot {
 	public static final Drivetrain drive = new Drivetrain();
 	public static final Intake intake = new Intake();
 	public static final Indexer indexer = new Indexer();
+	public static final Shooter shooter = new Shooter();
 	public static OI oi;
 
     Command autonomousCommand;
