@@ -31,7 +31,7 @@ public class SetShooterSpeed extends Command {
     	Robot.shooter.setRPM(rpm);    	
     }
 
-    // Make this return true when this Command no longer needs to run execute()
+    // .Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
         return !Robot.shooter.shooterState;
     }
