@@ -7,7 +7,7 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class SetShooterSpeed extends Command {
+public class RevShooter extends Command {
 	
 	public double rpm;
 	
@@ -15,8 +15,8 @@ public class SetShooterSpeed extends Command {
 		this.rpm = rpm;		
 	}
 
-    public SetShooterSpeed(double rpm) {
-        // Use requires() here to declare subsystem dependencie
+    public RevShooter(double rpm) {
+        // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     	this.rpm = rpm;
     }

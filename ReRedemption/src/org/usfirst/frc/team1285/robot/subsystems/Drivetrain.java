@@ -59,6 +59,8 @@ public class Drivetrain extends Subsystem {
 								RobotMap.LEFT_DRIVE_ENCODER_B,
 								RobotMap.leftDriveTrainEncoderReverse,
 								Encoder.EncodingType.k4X);
+		
+		leftDrive.setDistancePerPulse(RobotMap.driveEncoderDistPerTick);
 				
 		/*GYRO
 		try {

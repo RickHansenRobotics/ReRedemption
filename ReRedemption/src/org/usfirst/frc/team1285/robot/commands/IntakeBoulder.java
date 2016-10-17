@@ -24,7 +24,7 @@ public class IntakeBoulder extends Command {
     	//Run rollers inwards (intake boulder)
     	if(Robot.oi.getToolRightBumper()) {
     		Robot.intake.intake();
-    	} else if (Robot.oi.getToolRightTrigger()) {
+    	} else if (Robot.oi.getToolLeftBumper()) {
     		Robot.intake.outtake();
     	} else {
     			Robot.intake.intakeStop();

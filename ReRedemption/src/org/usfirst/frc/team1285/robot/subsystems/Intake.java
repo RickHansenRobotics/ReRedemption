@@ -24,8 +24,22 @@ public class Intake extends Subsystem {
 	rightIntakeArm = new CANTalon(RobotMap.RIGHT_INTAKE_ARM) ;
 	leftIntakeArm = new CANTalon(RobotMap.LEFT_INTAKE_ARM) ;
 	
-	
 	}
+	
+	public void intake()  {
+		rightIntakeRoller.set(1);
+		leftIntakeRoller.set(-1);
+	}
+	public void outtake()  {
+		rightIntakeRoller.set(-1);
+		leftIntakeRoller.set(1);
+	}
+	public void intakeStop()  {
+		rightIntakeRoller.set(0);
+		leftIntakeRoller.set(0);
+	}
+	
+	
 
 	@Override
 	protected void initDefaultCommand() {
@@ -42,21 +56,9 @@ public class Intake extends Subsystem {
 			leftIntakeArm.set(pwmVal);
 			*/
 	
-		public void intake() {
-			rightIntakeRoller.set(1);
-			leftIntakeRoller.set(-1);
-		}
-		public void outtake() {
-			rightIntakeRoller.set(-1);
-			leftIntakeRoller.set(1);
-		}
-		public void intakeStop() {
-			rightIntakeRoller.set(0);
-			leftIntakeRoller.set(0);
-		}
+		
 
 		public void runIntakeArms(double toolRightY) {
-			// TODO Auto-generated method stub
 			
 		}
 		

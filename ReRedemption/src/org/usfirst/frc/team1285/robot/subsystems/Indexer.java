@@ -1,6 +1,7 @@
 package org.usfirst.frc.team1285.robot.subsystems;
 
 import org.usfirst.frc.team1285.robot.RobotMap;
+import org.usfirst.frc.team1285.robot.commands.IndexBoulder;
 
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -32,6 +33,7 @@ public class Indexer extends Subsystem {
 	leftIndexerMotor.set(0);
    }
     public void initDefaultCommand() {
+    	setDefaultCommand(new IndexBoulder());
        
    
     	}

@@ -1,15 +1,13 @@
 package org.usfirst.frc.team1285.robot.commands;
 
-import org.usfirst.frc.team1285.robot.Robot;
-
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class IndexBoulder extends Command {
+public class ShootBoulder extends Command {
 
-    public IndexBoulder() {
+    public ShootBoulder() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     }
@@ -20,13 +18,6 @@ public class IndexBoulder extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	if(Robot.oi.getToolAButton()) {
-    		Robot.indexer.lift();
-    	} else if (Robot.oi.getToolRightTrigger()) {
-    		Robot.indexer.lower();
-    	} else {
-    			Robot.indexer.indexerStop();
-    	}
     }
 
     // Make this return true when this Command no longer needs to run execute()
