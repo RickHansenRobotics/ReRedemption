@@ -34,7 +34,7 @@ package org.usfirst.frc.team1285.robot;
 		public static final int BUMPER_SWITCH 					 = 5;
 		    
 		//**************************************************************************
-		//*************************** Pneumatics ***********************************
+		//*************************** PNEUMATICS ***********************************
 		//**************************************************************************
 		 
 		public static final int SOLENOID_A					= 1;
@@ -43,6 +43,7 @@ package org.usfirst.frc.team1285.robot;
 		//**************************************************************************
 	    //********************* DRIVE ENCODER CONSTANTS ****************************
 		//**************************************************************************
+		
 		public static final int driveWheelRadius = 3;//wheel radius in inches
 		public static final int drivePulsePerRotation = 128; //encoder pulse per rotation
 		public static final double driveGearRatio = 1/1; //ratio between wheel and encoder
@@ -50,4 +51,28 @@ package org.usfirst.frc.team1285.robot;
 		public static final double driveEncoderDistPerTick =(Math.PI*2*driveWheelRadius)/driveEncoderPulsePerRot;
 		public static final boolean rightDriveTrainEncoderReverse = false; 
 		public static final boolean leftDriveTrainEncoderReverse = false; 
+		
+		//**************************************************************************
+		//******************************* INTAKE MOTORS ****************************
+		//**************************************************************************
+		
+		public static final int RIGHT_INTAKE_ROLLER					=5;
+		public static final int LEFT_INTAKE_ROLLER					=6;
+		public static final int RIGHT_INTAKE_ARM					=7;
+		public static final int LEFT_INTAKE_ARM						=8;
+		
+		//**************************************************************************
+		//*************************** INDEXER MOTORS *******************************
+		//**************************************************************************
+		
+		public static final int LEFT_INDEXER_MOTOR					=10;
+		public static final int RIGHT_INDEXER_MOTOR					=11;
+		
+		//**************************************************************************
+		//*************************** SHOOTER MOTORS *******************************
+		//**************************************************************************
+		
+		public static final int RIGHT_SHOOTER_MOTOR					=9;
+		public static final int LEFT_SHOOTER_MOTOR					=12;
+		public static final int TURRET_MOTOR						=13;
 	}

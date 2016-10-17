@@ -1,14 +1,15 @@
 package org.usfirst.frc.team1285.robot.commands.auto;
 
 import org.usfirst.frc.team1285.robot.commands.DriveForward;
-import org.usfirst.frc.team1285.robot.commands.DriveTurn;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
-public class AutoDriveSquare extends CommandGroup {
+/**
+ *
+ */
+public class DriveStraightStaticAuto extends CommandGroup {
     
-    public  AutoDriveSquare() {
-
+    public  DriveStraightStaticAuto() {
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());
@@ -25,16 +26,13 @@ public class AutoDriveSquare extends CommandGroup {
         // e.g. if Command1 requires chassis, and Command2 requires arm,
         // a CommandGroup containing them would require both the chassis and the
         // arm.
-    	addSequential(new DriveForward(10, 5, 0.5));
-    	addSequential(new DriveTurn(5, 0.5, -0.5, 90));
     	
+    	//Drive up to Defense
     	addSequential(new DriveForward(10, 5, 0.5));
-    	addSequential(new DriveTurn(5, 0.5, -0.5, 90));
+    	//Crawl over
+    	addSequential(new DriveForward(3, 5, 1.0));
+    	//Drive thru courtyard
+    	addSequential(new DriveForward(5, 5, 0.5));
     	
-    	addSequential(new DriveForward(10, 5, 0.5));
-    	addSequential(new DriveTurn(5, 0.5, -0.5, 90));
-    	
-    	addSequential(new DriveForward(10, 5, 0.5));
-    	addSequential(new DriveTurn(5, 0.5, -0.5, 90));
     }
 }

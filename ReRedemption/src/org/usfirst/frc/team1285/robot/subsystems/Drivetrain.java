@@ -1,13 +1,13 @@
 package org.usfirst.frc.team1285.robot.subsystems;
 
 import org.usfirst.frc.team1285.robot.RobotMap;
+
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import org.usfirst.frc.team1285.robot.commands.TankDrive;
 import edu.wpi.first.wpilibj.Encoder;
 import org.usfirst.frc.team1285.robot.utilities.Nav6;
 import edu.wpi.first.wpilibj.SerialPort;
-import edu.wpi.first.wpilibj.Timer;
 import org.usfirst.frc.team1285.robot.NumberConstants;
 import org.usfirst.frc.team1285.robot.utilities.PIDController;
 
@@ -60,7 +60,7 @@ public class Drivetrain extends Subsystem {
 								RobotMap.leftDriveTrainEncoderReverse,
 								Encoder.EncodingType.k4X);
 				
-		//GYRO
+		/*GYRO
 		try {
 			serial_port = new SerialPort(57600, SerialPort.Port.kOnboard) ;
 			
@@ -80,12 +80,13 @@ public class Drivetrain extends Subsystem {
 			
 	}
 /************************GYRO FUNCTIONS************************/
-    
+   /* 
     /**
      * This function is used to check if the gyro is connected
      * 
      * @return Returns true or false depending on the state of the gyro
      */
+		/*
     public boolean gyroConnected(){
     	return nav6.isConnected();
     }
@@ -95,6 +96,7 @@ public class Drivetrain extends Subsystem {
      * 
      * @return Returns true or false depending on the state of the gyro
      */
+		/*
     public boolean gyroCalibrating(){
     	return nav6.isCalibrating();
     }
@@ -104,6 +106,7 @@ public class Drivetrain extends Subsystem {
      * 
      * @return Returns YAW
      */
+		/*
     public double getYaw(){
     	return nav6.getYaw();
     }
@@ -113,6 +116,7 @@ public class Drivetrain extends Subsystem {
      * 
      * @return Returns PITCH
      */
+		/*
     public double getPitch(){
     	return nav6.getPitch();
     }
@@ -122,6 +126,7 @@ public class Drivetrain extends Subsystem {
      * 
      * @return Returns ROLL
      */
+		/*
     public double getRoll(){
     	return nav6.getRoll();
     }
@@ -131,6 +136,7 @@ public class Drivetrain extends Subsystem {
      * 
      * @return Returns compass heading
      */
+		/*
     public double getCompassHeading(){
     	return nav6.getCompassHeading();
     }
@@ -138,8 +144,10 @@ public class Drivetrain extends Subsystem {
     /**
      * Resets the gyro back to zero
      */
+		/*
     public void resetGyro(){
     	nav6.zeroYaw();
+    	*/
 /**************************************************************/
     	//PID
 		drivePID = new PIDController(NumberConstants.pDrive,
@@ -154,7 +162,7 @@ public class Drivetrain extends Subsystem {
 	}
     
 	// Drive Straight Method
-	public void driveStraight (double setpoint, double speed)
+	public void driveStraight (double setpoint, double speed, double epsilon)
 	{
 		double output = drivePID.calcPID(setpoint, getAverageDistance(), 1);
 		

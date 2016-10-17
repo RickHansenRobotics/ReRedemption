@@ -11,15 +11,20 @@ public class DriveForward extends Command {
 	private double distance;
 	private double timeOut;
 	private double speed;
+	private double epsilon;
 	
-    public DriveForward(double distance, double timeOut, double speed) {
+	 public DriveForward(double distance, double timeOut, double speed) {
+		 this(distance, speed, timeOut, 1);
+	 }
+	
+    public DriveForward(double distance, double timeOut, double speed, double epsilon) {
     	this.distance = distance;
     	this.timeOut = timeOut;
     	this.speed = speed;
+    	this.epsilon = epsilon;
     	requires(Robot.drive);
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-    	
     }
 
     // Called just before this Command runs the first time
@@ -31,7 +36,7 @@ public class DriveForward extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.drive.driveStraight(distance, speed);
+    	Robot.drive.driveStraight(distance, speed, epsilon);
     }
 
     // Make this return true when this Command no longer needs to run execute()

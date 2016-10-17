@@ -28,12 +28,15 @@ public class DriveTurn extends Command {
     	setTimeout(timeOut);
     	
     	Robot.drive.resetEncoders() ;
-    	Robot.drive.resetGyro();
+    	//Robot.drive.resetGyro();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	Robot.drive.runRightDrive(leftSpeed);
+    	Robot.drive.runLeftDrive(rightSpeed);
     	Robot.drive.driveTurn(timeOut, leftSpeed, rightSpeed, angle);
+    	
     }
 
     // Make this return true when this Command no longer needs to run execute()
