@@ -27,7 +27,6 @@ public class NumberConstants {
 	public static final int ROUGHTERRAIN									= 1;
 	public static final int MOAT											= 2;
 	public static final int RAMPARTS										= 3;
-	public static final int PORTCULLIS										= 4;
 	public static final int CHEVAL											= 5;
 	
 	//DEFENSE LOCATION
