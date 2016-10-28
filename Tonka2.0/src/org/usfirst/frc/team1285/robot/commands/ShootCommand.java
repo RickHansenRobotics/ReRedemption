@@ -20,7 +20,7 @@ public class ShootCommand extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	System.out.println("INSIDE INIT");
+    	
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -30,12 +30,14 @@ public class ShootCommand extends Command {
     		cancelShooter();
     		batterShot.start();
     	}
-    	else if(Robot.oi.getToolXButton()){
+    /*
+    	else if(Robot.oi.getToolBButton()){
     		Robot.shooter.shooterState = true;
     		cancelShooter();
     		perpShot.start();
     	}
-    	else if(Robot.oi.getToolYButton()){
+    */
+    	else if(Robot.oi.getToolXButton()){
     		Robot.shooter.shooterState = false;
     		cancelShooter();
     	}

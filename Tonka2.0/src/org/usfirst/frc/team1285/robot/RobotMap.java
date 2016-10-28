@@ -35,14 +35,7 @@ import edu.wpi.first.wpilibj.DigitalSource;
 		  
 		public static final int LIMIT_SWITCH 					 				= 4;
 		public static final int OPTICAL_SENSOR 									= 5;
-		    
-		//**************************************************************************
-		//*************************** PNEUMATICS ***********************************
-		//**************************************************************************
-		/* 
-		public static final int SOLENOID_A					= 1;
-		public static final int SOLENOID_B				 	= 2;
-		*/
+		
 		//**************************************************************************
 	    //********************* DRIVE ENCODER CONSTANTS ****************************
 		//**************************************************************************
@@ -68,8 +61,8 @@ import edu.wpi.first.wpilibj.DigitalSource;
 		//*************************** INDEXER MOTORS *******************************
 		//**************************************************************************
 		
-		public static final int LEFT_INDEXER_MOTOR					=2;
-		public static final int RIGHT_INDEXER_MOTOR					=1;
+		public static final int LEFT_INDEXER_MOTOR					=1;
+		public static final int RIGHT_INDEXER_MOTOR					=2;
 		
 		//**************************************************************************
 		//*************************** SHOOTER MOTORS *******************************

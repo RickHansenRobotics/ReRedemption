@@ -21,11 +21,15 @@ public class TankDrive extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	//Half-Speed
+    	//Alignment Speed
     	if(Robot.oi.getDriveLeftBumper()){
+        	Robot.drive.runRightDrive((0.65)*Robot.oi.getDriveRightY());
+        	Robot.drive.runLeftDrive(-(0.65)*Robot.oi.getDriveLeftY());
+        }
+    	else if(Robot.oi.getDriveRightBumper()){
         	Robot.drive.runRightDrive((0.5)*Robot.oi.getDriveRightY());
         	Robot.drive.runLeftDrive(-(0.5)*Robot.oi.getDriveLeftY());
-        }
+    	}
     	//Full-Speed
         else{
         	Robot.drive.runRightDrive(Robot.oi.getDriveRightY());

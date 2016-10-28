@@ -135,13 +135,7 @@ import edu.wpi.first.wpilibj.Joystick;
 	        else
 	            return joy;
 	    }
-	
 
-	    public boolean getDriveDPadX() 
-	    {
-	    	return drivePad.getRawButton(GamepadConstants.DPAD_X);
-	    }
-	    
 	    public boolean getToolDPadX() 
 	    {
 	    	return toolPad.getRawButton(GamepadConstants.DPAD_X);

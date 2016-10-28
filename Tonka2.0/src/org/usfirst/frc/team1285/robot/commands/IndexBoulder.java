@@ -20,15 +20,15 @@ public class IndexBoulder extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+   
     	if(Robot.oi.getToolRightTrigger()) {
     		Robot.indexer.lift();
-    	} else if (Robot.oi.getToolAButton()) {
+    	} else if (Robot.oi.getToolYButton()) {
     		Robot.indexer.lower();
     	} else {
     			Robot.indexer.indexerStop();
     	}
     }
-
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
         return false;

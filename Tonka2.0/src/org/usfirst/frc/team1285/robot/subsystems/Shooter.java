@@ -1,15 +1,12 @@
 package org.usfirst.frc.team1285.robot.subsystems;
 
 import org.usfirst.frc.team1285.robot.NumberConstants;
-import org.usfirst.frc.team1285.robot.Robot;
+
 import org.usfirst.frc.team1285.robot.RobotMap;
 import org.usfirst.frc.team1285.robot.commands.ShootCommand;
-import org.usfirst.frc.team1285.robot.commands.TurnTurret;
 import org.usfirst.frc.team1285.robot.utilities.PIDController;
 
 import edu.wpi.first.wpilibj.CANTalon;
-import edu.wpi.first.wpilibj.CANTalon.FeedbackDevice;
-import edu.wpi.first.wpilibj.CANTalon.FeedbackDeviceStatus;
 import edu.wpi.first.wpilibj.Counter;
 import edu.wpi.first.wpilibj.command.Subsystem;
 

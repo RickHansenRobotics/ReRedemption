@@ -25,16 +25,9 @@ public class Indexer extends Subsystem {
 	}
 
 	public void lift() {
-		if(limit.get())
-		{
 			rightIndexerMotor.set(1);
 			leftIndexerMotor.set(0.9375);
 		}
-		else{
-			rightIndexerMotor.set(0);
-			leftIndexerMotor.set(0);
-		}
-	}
 
 	public void lower() {
 		rightIndexerMotor.set(-1);

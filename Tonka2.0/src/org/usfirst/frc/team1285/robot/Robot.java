@@ -2,34 +2,24 @@
 package org.usfirst.frc.team1285.robot;
 
 import edu.wpi.first.wpilibj.CameraServer;
+
 import edu.wpi.first.wpilibj.IterativeRobot;
 
-import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-import com.ni.vision.NIVision.Image;
-
-import org.usfirst.frc.team1285.robot.commands.RevShooter;
-import org.usfirst.frc.team1285.robot.commands.TestClass;
-import org.usfirst.frc.team1285.robot.commands.auto.DriveForward;
 import org.usfirst.frc.team1285.robot.subsystems.Drivetrain;
 import org.usfirst.frc.team1285.robot.subsystems.Indexer;
 import org.usfirst.frc.team1285.robot.subsystems.Intake;
 import org.usfirst.frc.team1285.robot.subsystems.Shooter;
 import org.usfirst.frc.team1285.robot.subsystems.Turret;
 
+import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.vision.USBCamera;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
-/**
- * The VM is configured to automatically run this class, and to call the
- * functions corresponding to each mode, as described in the IterativeRobot
- * documentation. If you change the name of this class or the package after
- * creating this project, you must also update the manifest file in the resource
- * directory.
- */
 public class Robot extends IterativeRobot {
+	
 //Subsystems
 	public static final Drivetrain drive = new Drivetrain();
 	public static final Intake intake = new Intake();
@@ -38,10 +28,14 @@ public class Robot extends IterativeRobot {
 	public static final Turret turret = new Turret();
 	public static OI oi;
 	
+// USB Camera
 	CameraServer server;
-
-    Command autonomousCommand = new DriveForward(0, 12, 1);
-  /*public SendableChooser autoChooser;
+	
+	public SendableChooser autoChooser;
+	
+	/*
+    Command autonomousCommand = new DriveForward(0, 16, 1);
+    
     public SendableChooser defenceChooser;
     public SendableChooser locationChooser;
   
@@ -49,14 +43,15 @@ public class Robot extends IterativeRobot {
     public static int selectedDefence;
     public static int autoNumber;
     public static int defencePosition;
-  */
+    */
+	
     {server = CameraServer.getInstance();
 	server.setQuality(25);
-// the camera name (ex "cam0") can be found through the roborio web
+	// the camera name (ex "cam0") can be found through the roborio web
 	// interface
 	
 	server.startAutomaticCapture("cam0");
-}
+    }
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
@@ -64,15 +59,14 @@ public class Robot extends IterativeRobot {
     public void robotInit() {
 		oi = new OI();
         // instantiate the command used for the autonomous period
-/*
- * defenceChooser = new SendableChooser();
+		/*
+		defenceChooser = new SendableChooser();
 		locationChooser = new SendableChooser();
 		
 		defenceChooser.addDefault("Rock Wall", NumberConstants.ROCKWALL);
 		defenceChooser.addDefault("Rough Terrain", NumberConstants.ROUGHTERRAIN);
 		defenceChooser.addObject("Moat", NumberConstants.MOAT);
 		defenceChooser.addObject("Ramparts", NumberConstants.RAMPARTS);
-		defenceChooser.addObject("Portcullis", NumberConstants.PORTCULLIS);
 		defenceChooser.addObject("Cheval de Frise", NumberConstants.CHEVAL);	
 				
 		locationChooser.addObject("2", 1);
@@ -92,11 +86,11 @@ public class Robot extends IterativeRobot {
 		
 		SmartDashboard.putData("Defence Mode", defenceChooser);
 		SmartDashboard.putData("Location", locationChooser);
-		SmartDashboard.putData("End Location", endLocationChooser);
 		SmartDashboard.putData("Autonomous", autoChooser);
 		
-		updateSmartDashboard();
- */
+		SmartDashboard.putData("AUTONOMOUS", null);
+	*/
+		updateSmartDashboard(); 
     }
 	
 	public void disabledPeriodic() {
@@ -106,7 +100,6 @@ public class Robot extends IterativeRobot {
 
     public void autonomousInit() {
         // schedule the autonomous command (example)
-        if (autonomousCommand != null) autonomousCommand.start();
     }
 
     /**
@@ -117,8 +110,6 @@ public class Robot extends IterativeRobot {
     }
 
     public void teleopInit() {
-		
-        if (autonomousCommand != null) autonomousCommand.cancel();
     }
 
     /**
@@ -135,10 +126,6 @@ public class Robot extends IterativeRobot {
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
         updateSmartDashboard();
-        
-        //if(oi.getToolBButton())
-        	//new TestClass(-90,3).start();
-        //turret.setTarget(90);
     }
     
     public void updateSmartDashboard() {
@@ -149,7 +136,6 @@ public class Robot extends IterativeRobot {
 		SmartDashboard.putBoolean("Limit Switch", indexer.getLimitSwitch());
 		SmartDashboard.putNumber("Turret Setpoint", turret.getSetpoint());
 		SmartDashboard.putNumber("Turret P", turret.getPGain());
-		//System.out.println("TURRET ENCODER: "+turret.turretEncoderGet());
 	}
 
 	/**

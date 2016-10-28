@@ -42,6 +42,11 @@ public class Intake extends Subsystem {
 		rightIntakeRoller.set(0);
 		leftIntakeRoller.set(0);
 	}
+	
+	public void halfIntake() {
+		rightIntakeRoller.set(0.5);
+		leftIntakeRoller.set(-0.5);
+	}
 
 	@Override
 	protected void initDefaultCommand() {
